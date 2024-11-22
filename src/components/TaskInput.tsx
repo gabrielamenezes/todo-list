@@ -6,7 +6,7 @@ export const TaskInput = () => {
         <input type="text" placeholder='Adicione uma nova tarefa' />
         <button>
             Criar
-            <PlusCircle size={24}/>
+            <PlusCircle size={22}/>
         </button>
     </label>
   )

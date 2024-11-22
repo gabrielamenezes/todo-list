@@ -26,6 +26,10 @@
     gap: 0.2rem;
     font-weight: bold;
     cursor: pointer;
+    transition: background 0.2s;
+}
+.taskInput button:hover {
+    background: var(--blue);
 }
 .taskInput button svg {
     line-height: 1;
