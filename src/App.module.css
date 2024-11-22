@@ -1,11 +1,7 @@
 .wrapper {
   max-width: 68rem;
-  margin: 2rem auto;
+  margin: 0 auto;
   padding: 0 1rem;
-  display: grid;
-  grid-template-columns: 256px 1fr;
-  gap: 2rem;
-  align-items: flex-start;
 }
 
 /* Quando a tela for menor que 768px*/
