@@ -1,0 +1,56 @@
+.task {
+  display: flex;
+  flex: 1;
+  gap: 0.75rem;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1rem;
+  border-radius: 8px;
+
+  background-color: var(--gray-500);
+  border: 1px solid var(--gray-400);
+}
+.task div {
+  display: flex;
+}
+
+.task label {
+  display: flex;
+  padding: 3px;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.task button {
+  border: none;
+  background-color: transparent;
+  border-radius: 4px;
+
+  padding: 5px 4px 2px 4px;
+  
+  transition: 0.2s background-color;
+}
+.task button line, .task button path {
+  transition: 0.2s fill;
+}
+.task button:hover {
+  background-color: var(--gray-400);
+}
+/* .task button:hover line, .task button:hover path {
+  fill: var(--danger);
+} */
+
+.paragraph {
+  font-size: 1rem;
+  line-height: 140%;
+  user-select: none;
+
+  transition: 0.2s all;
+}
+
+.paragraph-checked {
+  text-decoration: line-through;
+  color: var(--gray-300);
+}
