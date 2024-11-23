@@ -1,3 +1,4 @@
+import { EmptyList } from './EmptyList';
 import { Task, TaskType } from './Task'
 import styles from './TaskList.module.css'
 interface TaskListProps {
@@ -11,7 +12,12 @@ export const TaskList = ({taskList,taskCount}: TaskListProps) => {
             <p className={styles.createdTasks}>Tarefas criadas <span>{taskCount}</span></p>
             <p className={styles.completedTasks}>Concluídas <span>0</span></p>
         </header>
-        {taskList.map(task => <Task key={task.id} task={task}/>)}
+        {taskList.length > 0 ? (
+          taskList.map(task => <Task key={task.id} task={task}/>)
+          ) : (
+           <EmptyList />
+          )
+        }
     </main>
   )
 }
