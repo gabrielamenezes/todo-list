@@ -1,6 +1,10 @@
 import { Trash } from '@phosphor-icons/react'
 import styles from './Task.module.css'
-export const Task = () => {
+
+interface TaskProps {
+    task: string;
+}
+export const Task = ({task}: TaskProps) => {
     return (
         <div className={styles.task}>
           <div>
@@ -10,7 +14,7 @@ export const Task = () => {
               </span>
     
               <p className={`${styles.paragraph}`}>
-                Alguma tarefa aqui
+                {task}
               </p>
             </label>
           </div>
