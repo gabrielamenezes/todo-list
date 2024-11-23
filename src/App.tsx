@@ -8,7 +8,7 @@ import './global.css'
 
 function App() {
   const [taskInput, setTaskInput] = useState('');
-  const [taskList, setTaskList] = useState(['']);
+  const [taskList, setTaskList] = useState([{id: '', name: '', completed: false}]);
   const [taskCount, setTaskCount] = useState(0)
   return (
     <>

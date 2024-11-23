@@ -1,8 +1,13 @@
 import { Trash } from '@phosphor-icons/react'
 import styles from './Task.module.css'
 
+export interface TaskType {
+  id: string,
+  name: string;
+  completed: boolean;
+}
 interface TaskProps {
-    task: string;
+    task: TaskType;
 }
 export const Task = ({task}: TaskProps) => {
     return (
@@ -14,7 +19,7 @@ export const Task = ({task}: TaskProps) => {
               </span>
     
               <p className={`${styles.paragraph}`}>
-                {task}
+                {task.name}
               </p>
             </label>
           </div>
