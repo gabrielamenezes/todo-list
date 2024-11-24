@@ -8,12 +8,17 @@ export interface TaskType {
 }
 interface TaskProps {
     task: TaskType;
+    completedTaskCount: number;
+    setCompletedTaskCount: (value: number) => void;
 }
-export const Task = ({task}: TaskProps) => {
+export const Task = ({task, completedTaskCount, setCompletedTaskCount}: TaskProps) => {
+  function handleCompleteTask() {
+    setCompletedTaskCount(completedTaskCount + 1)
+  }
     return (
         <div className={styles.task}>
           <div>
-            <label htmlFor="checkbox">
+            <label htmlFor="checkbox" onClick={handleCompleteTask}>
               <input readOnly type="checkbox" />
               <span className={`${styles.checkbox}`}>
               </span>

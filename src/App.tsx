@@ -10,7 +10,7 @@ import { TaskType } from './components/Task'
 function App() {
   const [taskInput, setTaskInput] = useState('');
   const [taskList, setTaskList] = useState<TaskType[]>([]);
-  const [taskCount, setTaskCount] = useState(0)
+  const [taskCount, setTaskCount] = useState(0);
   return (
     <>
       <Header />
@@ -23,8 +23,9 @@ function App() {
           taskList={taskList} 
           setTaskCount={setTaskCount}
           taskCount={taskCount}
+          
         />
-        <TaskList taskList={taskList} taskCount={taskCount} />
+        <TaskList taskList={taskList} taskCount={taskCount}/>
       </div>
     </>
   )
