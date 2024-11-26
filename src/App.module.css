@@ -28,6 +28,29 @@ label button:hover {
 label button svg {
   line-height: 1;
 }
+
+.taskHeader {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1.5rem;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+}
+.taskHeader .createdTasks {
+  color: var(--blue);
+  font-weight: bold;
+}
+.taskHeader .completedTasks {
+  color: var(--purple);
+  font-weight: bold;
+}
+.taskHeader span {
+  color: var(--gray-200);
+  background: var(--gray-400);
+  padding: 0.5rem;
+  border-radius: 10px;
+  font-weight: bold;
+}
 /* Quando a tela for menor que 768px*/
 @media (max-width: 768px) {
   html {

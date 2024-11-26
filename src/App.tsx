@@ -7,6 +7,7 @@ import './global.css'
 import { TaskType } from './components/Task'
 import { PlusCircle } from '@phosphor-icons/react'
 import { v4 as uuidv4 } from 'uuid';
+import { EmptyList } from './components/EmptyList'
 
 
 function App() {
@@ -35,9 +36,10 @@ function App() {
         </label>
         
         <header className={styles.taskHeader}>
-
+          <p className={styles.createdTasks}>Tarefas criadas <span>{tasks.length}</span></p>
+          <p className={styles.completedTasks}>Concluídas <span>{}</span> de <span>{tasks.length}</span></p>
         </header>
-        {/* <TaskList taskList={taskList} taskCount={taskCount}/> */}
+        {tasks.length > 0 ? <>oi</> : <EmptyList />}
       </div>
     </>
   )
