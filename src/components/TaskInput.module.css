@@ -1,10 +1,4 @@
-.taskInput {
-    display: flex;
-    justify-content: center;
-    margin-top: -2rem;
-}
-
-.taskInput input {
+input {
     padding: 1rem;
     margin-right: 0.5rem;
     background: var(--gray-500);
@@ -15,23 +9,4 @@
     font-size: 1rem;
 }
 
-.taskInput button {
-    width: 5.625rem;
-    border-radius: 8px;
-    background: var(--blue-dark);
-    color: var(--gray-100);
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.2rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-.taskInput button:hover {
-    background: var(--blue);
-}
-.taskInput button svg {
-    line-height: 1;
-}
+

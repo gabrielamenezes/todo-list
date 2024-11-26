@@ -14,7 +14,7 @@ export const TaskInput = ({taskInput, setTaskInput} : TaskInputProps) => {
 
  
   return (
-      <input type="text" placeholder='Adicione uma nova tarefa' value={taskInput} onChange={(event) => handleCreateTaskInputChange(event)}/>
+      <input className={styles.input} type="text" placeholder='Adicione uma nova tarefa' value={taskInput} onChange={(event) => handleCreateTaskInputChange(event)}/>
 
   )
 }
