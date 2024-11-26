@@ -3,7 +3,31 @@
   margin: 0 auto;
   padding: 0 1rem;
 }
-
+label {
+  display: flex;
+  justify-content: center;
+  margin-top: -2rem;
+}
+label button {
+  width: 5.625rem;
+  border-radius: 8px;
+  background: var(--blue-dark);
+  color: var(--gray-100);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+label button:hover {
+  background: var(--blue);
+}
+label button svg {
+  line-height: 1;
+}
 /* Quando a tela for menor que 768px*/
 @media (max-width: 768px) {
   html {

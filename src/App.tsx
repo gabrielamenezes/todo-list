@@ -2,7 +2,6 @@ import { useState } from 'react'
 import styles from './App.module.css'
 import { Header } from './components/Header'
 import { TaskInput } from './components/TaskInput'
-import { TaskList } from './components/TaskList'
 
 import './global.css'
 import { TaskType } from './components/Task'
@@ -29,13 +28,16 @@ function App() {
             setTaskInput={setTaskInput} 
             
           />
-        </label>
-        
-        <button onClick={handleCreateNewTask}>
+          <button onClick={handleCreateNewTask}>
             Criar
             <PlusCircle size={22}/>
         </button>
-        <TaskList taskList={taskList} taskCount={taskCount}/>
+        </label>
+        
+        <header className={styles.taskHeader}>
+
+        </header>
+        {/* <TaskList taskList={taskList} taskCount={taskCount}/> */}
       </div>
     </>
   )
