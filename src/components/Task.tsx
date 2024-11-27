@@ -1,24 +1,21 @@
 import { Trash } from '@phosphor-icons/react'
 import styles from './Task.module.css'
+import { TaskType } from '../App';
 
-export interface TaskType {
-  id: string,
-  name: string;
-  completed: boolean;
-}
+
 interface TaskProps {
     task: TaskType;
-    completedTaskCount: number;
-    setCompletedTaskCount: (value: number) => void;
+    handleDelete: (id: string) => void;
 }
-export const Task = ({task, completedTaskCount, setCompletedTaskCount}: TaskProps) => {
-  function handleCompleteTask() {
-    setCompletedTaskCount(completedTaskCount + 1)
-  }
+export const Task = ({task, handleDelete}: TaskProps) => {
+    function handleTaskToggle() {
+
+    }
+   
     return (
         <div className={styles.task}>
           <div>
-            <label htmlFor="checkbox" onClick={handleCompleteTask}>
+            <label htmlFor="checkbox" onClick={handleTaskToggle}>
               <input readOnly type="checkbox" />
               <span className={`${styles.checkbox}`}>
               </span>
@@ -29,8 +26,8 @@ export const Task = ({task, completedTaskCount, setCompletedTaskCount}: TaskProp
             </label>
           </div>
     
-          <button>
-            <Trash size={16} color="#808080" />
+          <button onClick={() => handleDelete(task.id)} title="Deletar tarefa?">
+            <Trash size={16} color="#808080"/>
           </button>
         </div>
       )
