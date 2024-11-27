@@ -6,10 +6,11 @@ import { TaskType } from '../App';
 interface TaskProps {
     task: TaskType;
     handleDelete: (id: string) => void;
+    toggleTaskStatus: ({ id, value }: { id: string; value: boolean }) => void
 }
-export const Task = ({task, handleDelete}: TaskProps) => {
+export const Task = ({task, handleDelete, toggleTaskStatus}: TaskProps) => {
     function handleTaskToggle() {
-
+      toggleTaskStatus({ id: task.id, value: !task.completed })
     }
    
     return (

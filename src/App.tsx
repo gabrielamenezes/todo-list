@@ -29,6 +29,17 @@ function App() {
   function deleteTask(id: string) {
     setTasks(task => task.filter(task => task.id !== id))
   }
+  function handleToggleTask({ id, value }: { id: string; value: boolean }) {
+    const updatedTasks = tasks.map((task) => {
+      if (task.id === id) {
+        return { ...task, completed: value }
+      }
+
+      return { ...task }
+    })
+
+    setTasks(updatedTasks)
+  }
   return (
     <>
       <Header />
@@ -49,7 +60,7 @@ function App() {
           <p className={styles.createdTasks}>Tarefas criadas <span>{tasks.length}</span></p>
           <p className={styles.completedTasks}>Concluídas <span>{}</span> de <span>{tasks.length}</span></p>
         </header>
-        {tasks.length > 0 ? tasks.map(task => <Task key={task.id} task={task} handleDelete={deleteTask} />): <EmptyList />}
+        {tasks.length > 0 ? tasks.map(task => <Task key={task.id} toggleTaskStatus={handleToggleTask} task={task} handleDelete={deleteTask} />): <EmptyList />}
       </div>
     </>
   )
