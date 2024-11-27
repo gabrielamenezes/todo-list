@@ -1,4 +1,4 @@
-import { Trash } from '@phosphor-icons/react'
+import { Check, Trash } from '@phosphor-icons/react'
 import styles from './Task.module.css'
 import { TaskType } from '../App';
 
@@ -12,19 +12,27 @@ export const Task = ({task, handleDelete, toggleTaskStatus}: TaskProps) => {
     function handleTaskToggle() {
       toggleTaskStatus({ id: task.id, value: !task.completed })
     }
+    const checkboxCheckedClassname = task.completed
+    ? styles['checkbox-checked']
+    : styles['checkbox-unchecked']
+  const paragraphCheckedClassname = task.completed
+    ? styles['paragraph-checked']
+    : ''
+
    
     return (
         <div className={styles.task}>
           <div>
-            <label htmlFor="checkbox" onClick={handleTaskToggle}>
-              <input readOnly type="checkbox" />
-              <span className={`${styles.checkbox}`}>
-              </span>
-    
-              <p className={`${styles.paragraph}`}>
-                {task.name}
-              </p>
-            </label>
+          <label htmlFor="checkbox" onClick={handleTaskToggle}>
+            <input readOnly type="checkbox" checked={task.completed} />
+            <span className={`${styles.checkbox} ${checkboxCheckedClassname}`}>
+              {task.completed && <Check size={12} />}
+            </span>
+
+            <p className={`${styles.paragraph} ${paragraphCheckedClassname}`}>
+              {task.name}
+            </p>
+          </label>
           </div>
     
           <button onClick={() => handleDelete(task.id)} title="Deletar tarefa?">
