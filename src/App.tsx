@@ -18,7 +18,13 @@ function App() {
   const [taskInput, setTaskInput] = useState('');
   const [tasks, setTasks] = useState<TaskType[]>([]);
 
+   const checkedTasksCounter = tasks.reduce((prevValue, currentTask) => {
+    if (currentTask.completed) {
+      return prevValue + 1
+    }
 
+    return prevValue
+  }, 0)
   function handleCreateTask() {
     if(!taskInput) {
       return
@@ -45,7 +51,7 @@ function App() {
       <Header />
 
       <div className={styles.wrapper}>
-        <label>
+        <label className={styles.addTaskLabel}>
           <TaskInput 
             value={taskInput}
             onChange={(event: ChangeEvent<HTMLInputElement>) => setTaskInput(event.target.value)}
@@ -58,7 +64,7 @@ function App() {
         
         <header className={styles.taskHeader}>
           <p className={styles.createdTasks}>Tarefas criadas <span>{tasks.length}</span></p>
-          <p className={styles.completedTasks}>Concluídas <span>{}</span> de <span>{tasks.length}</span></p>
+          <p className={styles.completedTasks}>Concluídas <span>{checkedTasksCounter}</span> de <span>{tasks.length}</span></p>
         </header>
         {tasks.length > 0 ? tasks.map(task => <Task key={task.id} toggleTaskStatus={handleToggleTask} task={task} handleDelete={deleteTask} />): <EmptyList />}
       </div>
